@@ -1,0 +1,50 @@
+import pandas as pd
+
+year = input('What season?')
+
+year = int(year)
+
+#Create Dataframes in Panda
+df1 = pd.read_csv('Datasets/season{}week1.csv'.format(year))
+df2 = pd.read_csv('Datasets/season{}week2.csv'.format(year))
+df3 = pd.read_csv('Datasets/season{}week3.csv'.format(year))
+df4 = pd.read_csv('Datasets/season{}week4.csv'.format(year))
+df5 = pd.read_csv('Datasets/season{}week5.csv'.format(year))
+df6 = pd.read_csv('Datasets/season{}week6.csv'.format(year))
+df7 = pd.read_csv('Datasets/season{}week7.csv'.format(year))
+df8 = pd.read_csv('Datasets/season{}week8.csv'.format(year))
+df9 = pd.read_csv('Datasets/season{}week9.csv'.format(year))
+df10 = pd.read_csv('Datasets/season{}week10.csv'.format(year))
+df11 = pd.read_csv('Datasets/season{}week11.csv'.format(year))
+df12 = pd.read_csv('Datasets/season{}week12.csv'.format(year))
+df13 = pd.read_csv('Datasets/season{}week13.csv'.format(year))
+df14 = pd.read_csv('Datasets/season{}week14.csv'.format(year))
+df15 = pd.read_csv('Datasets/season{}week15.csv'.format(year))
+df16 = pd.read_csv('Datasets/season{}week16.csv'.format(year))
+df17 = pd.read_csv('Datasets/season{}week17.csv'.format(year))
+
+
+#Create a pandas excel writer using Xlsxwriter as an engine
+writer = pd.ExcelWriter('Datasets/season{}.xlsx'.format(year), engine='xlsxwriter')
+
+# Write each dataframe to a different worksheet
+df1.to_excel(writer, sheet_name='Week1')
+df2.to_excel(writer, sheet_name='Week2')
+df3.to_excel(writer, sheet_name='Week3')
+df4.to_excel(writer, sheet_name='Week4')
+df5.to_excel(writer, sheet_name='Week5')
+df6.to_excel(writer, sheet_name='Week6')
+df7.to_excel(writer, sheet_name='Week7')
+df8.to_excel(writer, sheet_name='Week8')
+df9.to_excel(writer, sheet_name='Week9')
+df10.to_excel(writer, sheet_name='Week10')
+df11.to_excel(writer, sheet_name='Week11')
+df12.to_excel(writer, sheet_name='Week12')
+df13.to_excel(writer, sheet_name='Week13')
+df14.to_excel(writer, sheet_name='Week14')
+df15.to_excel(writer, sheet_name='Week15')
+df16.to_excel(writer, sheet_name='Week16')
+df17.to_excel(writer, sheet_name='Week17')
+
+# close Panadas Excel writer and output the Excel file
+writer.save()
